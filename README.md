@@ -2,9 +2,13 @@
 
 ## Rebuild and re-run your Go applications when files change.
 
-This is a fork from github.markbates/fresh to add the possibility
-to run the refresh with only command arguments and not only a configuration file
-Initial readme is below:
+***
+
+### This is a fork from github/markbates/fresh to add the possibility to run the refresh with only command arguments and not only a configuration file
+
+***
+
+### Initial readme is below
 
 This project was inspired by [https:#github.com/pilu/fresh](https:#github.com/pilu/fresh). Lack of updates and response from the maintainer, but a non-idiomatic codebase, numerous bugs, and lack of detailed reporting made the project a dead end for me to use. Enter `refresh`.
 
