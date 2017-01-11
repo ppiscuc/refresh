@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/markbates/refresh/refresh"
+	"github.com/ppiscuc/refresh/refresh"
 	"github.com/spf13/cobra"
 )
 

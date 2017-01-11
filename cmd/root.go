@@ -7,7 +7,18 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var cfgFile string
+var (
+	cfgFile    string
+	approot    string
+	igndir     []string
+	ext        []string
+	buildpath  string
+	builddelay string
+	binaryname string
+	cmdflags   []string
+	colors     bool
+	logname    string
+)
 
 var RootCmd = &cobra.Command{
 	Use:   "refresh",
@@ -25,5 +36,15 @@ func Execute() {
 }
 
 func init() {
+	var empty []string
 	RootCmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "refresh.yml", "path to configuration file")
+	RootCmd.PersistentFlags().StringVar(&approot, "approot", "", "app root")
+	RootCmd.PersistentFlags().StringSliceVar(&igndir, "igndir", empty, "ignore directories")
+	RootCmd.PersistentFlags().StringSliceVar(&ext, "ext", empty, "included extensions")
+	RootCmd.PersistentFlags().StringVar(&buildpath, "buildpath", "", "build path")
+	RootCmd.PersistentFlags().StringVar(&builddelay, "builddelay", "", "build delay")
+	RootCmd.PersistentFlags().StringVar(&binaryname, "binaryname", "", "binary name")
+	RootCmd.PersistentFlags().StringSliceVar(&cmdflags, "cmdflags", empty, "command flags")
+	RootCmd.PersistentFlags().BoolVar(&colors, "colors", false, "colors")
+	RootCmd.PersistentFlags().StringVar(&logname, "logname", "", "log name")
 }

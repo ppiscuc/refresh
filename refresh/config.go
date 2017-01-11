@@ -47,3 +47,18 @@ func ID() string {
 	d, _ := os.Getwd()
 	return fmt.Sprintf("%x", md5.Sum([]byte(d)))
 }
+
+//DefaultConfiguration returns a config with defaults
+func DefaultConfiguration() Configuration {
+	c := Configuration{
+		AppRoot:            ".",
+		IgnoredFolders:     []string{"vendor", "log", "tmp"},
+		IncludedExtensions: []string{".go"},
+		BuildPath:          "/tmp",
+		BuildDelay:         200,
+		BinaryName:         "refresh-build",
+		CommandFlags:       []string{},
+		EnableColors:       true,
+	}
+	return c
+}
